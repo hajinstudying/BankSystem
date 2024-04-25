@@ -1,11 +1,8 @@
 package com.javalab.domain;
 
-import java.lang.reflect.Member;
-import java.net.PasswordAuthentication;
-
 public class Account {
     private String accountNum;  //계좌번호
-    private double acBalance; //계좌 잔고
+    private double balance; //계좌 잔고
     private Customer customer;  //계좌주인
     private int password;
 
@@ -14,9 +11,9 @@ public class Account {
     }
 
     //오버로딩 생성자
-    public Account(String accountNum, double acBalance, Customer customer, int password) {
+    public Account(String accountNum, double balance, Customer customer, int password) {
         this.accountNum = accountNum;
-        this.acBalance = acBalance;
+        this.balance = balance;
         this.customer = customer;
         this.password = password;
     }
@@ -30,12 +27,12 @@ public class Account {
         this.accountNum = accountNum;
     }
 
-    public double getAcBalance() {
-        return acBalance;
+    public double getBalance() {
+        return balance;
     }
 
-    public void setAcBalance(double acBalance) {
-        this.acBalance = acBalance;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     public Customer getCustomer() {
@@ -56,31 +53,31 @@ public class Account {
 
     // 입금 메소드
     public synchronized void  saveMoney(double savemoney){
-        double currentMoney = getAcBalance();
+        double currentMoney = getBalance();
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        setAcBalance(currentMoney+savemoney);
+        setBalance(currentMoney+savemoney);
         System.out.println("입금완료");
-        System.out.println("현재 잔액은 : " + getAcBalance() + "입니다");
+        System.out.println("현재 잔액은 : " + getBalance() + "입니다");
 
     }
 
 
     // 출금 메소드
     public synchronized void withdraw(double withdrawmoney){
-        double currentMoney = getAcBalance();
+        double currentMoney = getBalance();
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         if(currentMoney-withdrawmoney>=0){
-            setAcBalance(currentMoney-withdrawmoney);
+            setBalance(currentMoney-withdrawmoney);
             System.out.println("출금 완료");
-            System.out.println("현재 잔액은 : "+ getAcBalance() + "입니다");
+            System.out.println("현재 잔액은 : "+ getBalance() + "입니다");
         } else {
             System.out.println("잘못된 요청입니다.");
         }
