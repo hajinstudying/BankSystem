@@ -5,16 +5,17 @@ import java.lang.reflect.Member;
 public class Account {
     private String accountNum;  //계좌번호
     private double acBalance; //계좌 잔고
+    private Customer customer;  //계좌주인
 
     // 기본생성자
     public Account() {
     }
 
-
     //오버로딩 생성자
-    public Account(String accountNum, double acBalance) {
+    public Account(String accountNum, double acBalance, Customer customer) {
         this.accountNum = accountNum;
         this.acBalance = acBalance;
+        this.customer = customer;
     }
 
     // 게터 세터
@@ -34,18 +35,13 @@ public class Account {
         this.acBalance = acBalance;
     }
 
-    //
-    @Override
-    public boolean equals(Object obj){
-        if(obj instanceof  Account){
-            Account acc = (Account)obj;
-            return acc.accountNum == this.accountNum;
-        }else{
-            return false;
-        }
+    public Customer getCustomer() {
+        return customer;
     }
 
-
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
     // 입금 메소드
     public synchronized void  saveMoney(double savemoney){

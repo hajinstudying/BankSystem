@@ -1,7 +1,7 @@
 package com.javalab.domain;
 public class Bank {
     private Account account;
-    private Customer customer;
+
     private double bankBlance;
 
     public Bank(Account account, Customer customer, double bankBlance) {
