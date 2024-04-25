@@ -29,10 +29,47 @@ public class Database {
         customers.add(new Customer(2, "김유진", 2856));
         customers.add(new Customer(3, "강감찬", 1687));
         //계좌 리스트 초기화
-        accounts.add(new Account(1231231231231, 1000)); //account String으로 해야할듯?
-        accounts.add(new Account(4004004004000, 1000));
-        accounts.add(new Account(3560598023696, 1000));
-        //거래내역 리스트 초기화
+        accounts.add(new Account("1231231231231", 1000)); //account String형으로 변경
+        accounts.add(new Account("4004004004000", 1000));
+        accounts.add(new Account("3560598023696", 1000));
         //은행 리스트 초기화
+        banks.add(new Bank(accounts.get(0), customers.get(0), 1000));
+        banks.add(new Bank(accounts.get(1), customers.get(1), 2000));
+        banks.add(new Bank(accounts.get(2), customers.get(2), 3000));
+        //거래내역 리스트 초기화
+    }
+
+    //getter setter
+
+    public ArrayList<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(ArrayList<Customer> customers) {
+        this.customers = customers;
+    }
+
+    public ArrayList<Account> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(ArrayList<Account> accounts) {
+        this.accounts = accounts;
+    }
+
+    public ArrayList<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(ArrayList<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
+    public ArrayList<Bank> getBanks() {
+        return banks;
+    }
+
+    public void setBanks(ArrayList<Bank> banks) {
+        this.banks = banks;
     }
 }

@@ -1,6 +1,6 @@
 package com.javalab.domain;
 public class Account {
-    private int accountNum;  //계좌번호
+    private String accountNum;  //계좌번호
     private double acBalance; //계좌 잔고
 
     // 기본생성자
@@ -9,17 +9,17 @@ public class Account {
 
 
     //오버로딩 생성자
-    public Account(int accountNum, double acBalance) {
+    public Account(String accountNum, double acBalance) {
         this.accountNum = accountNum;
         this.acBalance = acBalance;
     }
 
     // 게터 세터
-    public int getAccountNum() {
+    public String getAccountNum() {
         return accountNum;
     }
 
-    public void setAccountNum(int accountNum) {
+    public void setAccountNum(String accountNum) {
         this.accountNum = accountNum;
     }
 
@@ -61,6 +61,5 @@ public class Account {
         } else {
             System.out.println("잘못된 요청입니다.");
         }
-
     }
 }
