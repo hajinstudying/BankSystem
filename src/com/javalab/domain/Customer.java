@@ -16,6 +16,9 @@ public class Customer {
         this.pw = pw;
     }
 
+    public Customer(int i, String 홍길동) {
+    }
+
     //게터 세터
 
     public int getId() {

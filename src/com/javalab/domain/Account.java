@@ -1,21 +1,24 @@
 package com.javalab.domain;
 
 import java.lang.reflect.Member;
+import java.net.PasswordAuthentication;
 
 public class Account {
     private String accountNum;  //계좌번호
     private double acBalance; //계좌 잔고
     private Customer customer;  //계좌주인
+    private int password;
 
     // 기본생성자
     public Account() {
     }
 
     //오버로딩 생성자
-    public Account(String accountNum, double acBalance, Customer customer) {
+    public Account(String accountNum, double acBalance, Customer customer, int password) {
         this.accountNum = accountNum;
         this.acBalance = acBalance;
         this.customer = customer;
+        this.password = password;
     }
 
     // 게터 세터
@@ -41,6 +44,14 @@ public class Account {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public int getPassword() {
+        return password;
+    }
+
+    public void setPassword(int password) {
+        this.password = password;
     }
 
     // 입금 메소드

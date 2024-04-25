@@ -29,13 +29,10 @@ public class Database {
         customers.add(new Customer(2, "김유진"));
         customers.add(new Customer(3, "강감찬"));
         //계좌 리스트 초기화
-        accounts.add(new Account("1231231231231", 1000)); //account String형으로 변경
-        accounts.add(new Account("4004004004000", 1000));
-        accounts.add(new Account("3560598023696", 1000));
+        accounts.add(new Account("1231231231231", 1000, 1234)); //account String형으로 변경
+        accounts.add(new Account("4004004004000", 1000, 1234));
+        accounts.add(new Account("3560598023696", 1000, 1234));
         //은행 리스트 초기화
-        banks.add(new Bank(accounts.get(0), customers.get(0), 1000));
-        banks.add(new Bank(accounts.get(1), customers.get(1), 2000));
-        banks.add(new Bank(accounts.get(2), customers.get(2), 3000));
         //거래내역 리스트 초기화
     }
 
