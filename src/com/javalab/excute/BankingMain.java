@@ -21,27 +21,28 @@ public class BankingMain {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("계좌번호를 입력해주세요.");    //계좌번호 입력받음
-        String userAccount = scanner.nextLine();
+        String inputAccount = scanner.nextLine();
         System.out.println("비밀번호 네자리를 입력해주세요.");  //비밀번호를 입력받음
-        int userPassword = scanner.nextInt();
+        int inputPassword = scanner.nextInt();
 
         //입력받은 정보로 뱅킹에서 찾아옴
+        Account currentAccount = null;
         for(Account account : accounts){
-            if(userAccount.equals(account.getAccountNum())){
+            if(inputAccount.equals(account.getAccountNum())){
 
                 break;
             }
         }
+        for(inputPassword==)
 
         System.out.println("이용하실 선택지의 번호를 입력해주세요.");    //서비스 선택
-        System.out.println("입금 : 1   출급 : 2   잔액확인 : 3");
+        System.out.println("잔액확인 : 1   입금 : 2   출금 : 3");
         int service = scanner.nextInt();
 
         switch(service){
             case 1 :
-                System.out.println("입금하실 금액을 입력해주세요.");
-                double savemoney = scanner.nextInt();
-                saveMoney(double savemoney);
+                System.out.println("잔액확인");
+
                 break;
             case 2 :
                 break;
@@ -49,8 +50,5 @@ public class BankingMain {
                 case 3 :
                 break;
         }
-
     }//end of main
-
-
 }

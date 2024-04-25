@@ -1,4 +1,7 @@
 package com.javalab.domain;
+
+import java.lang.reflect.Member;
+
 public class Account {
     private String accountNum;  //계좌번호
     private double acBalance; //계좌 잔고
@@ -30,6 +33,19 @@ public class Account {
     public void setAcBalance(double acBalance) {
         this.acBalance = acBalance;
     }
+
+    //
+    @Override
+    public boolean equals(Object obj){
+        if(obj instanceof  Account){
+            Account acc = (Account)obj;
+            return acc.accountNum == this.accountNum;
+        }else{
+            return false;
+        }
+    }
+
+
 
     // 입금 메소드
     public synchronized void  saveMoney(double savemoney){

@@ -25,9 +25,9 @@ public class Database {
     //데이터 생성 메소드
     public void initializeData() {
         //고객 리스트 초기화
-        customers.add(new Customer(1, "홍길동", 6425));
-        customers.add(new Customer(2, "김유진", 2856));
-        customers.add(new Customer(3, "강감찬", 1687));
+        customers.add(new Customer(1, "홍길동"));
+        customers.add(new Customer(2, "김유진"));
+        customers.add(new Customer(3, "강감찬"));
         //계좌 리스트 초기화
         accounts.add(new Account("1231231231231", 1000)); //account String형으로 변경
         accounts.add(new Account("4004004004000", 1000));
