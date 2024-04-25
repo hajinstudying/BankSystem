@@ -4,7 +4,7 @@ public class Customer {
     private int id;         //회원ID
     private String name;    //이름
     private int pw;         //계좌비밀번호
-    private Account accountNum; // 계좌번호
+    private Account account; // 계좌번호
 
     // 기본 생성자
     public Customer() {
@@ -13,20 +13,20 @@ public class Customer {
     // 오버로딩 생성자
 
 
-    public Customer(int id, String name, int pw, Account accountNum) {
+    public Customer(int id, String name, int pw, Account account) {
         this.id = id;
         this.name = name;
         this.pw = pw;
-        this.accountNum = accountNum;
+        this.account = account;
     }
 
     // 게터 세터 메소드
-    public Account getAccountNum() {
-        return accountNum;
+    public Account getAccount() {
+        return account;
     }
 
-    public void setAccountNum(Account accountNum) {
-        this.accountNum = accountNum;
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
     public int getId() {
@@ -59,7 +59,7 @@ public class Customer {
         return "Customer{" +
                 "고객ID=" + id +
                 ", 이름='" + name + '\'' +
-                ", 계좌비밀번호=" + pw +accountNum+
+                ", 계좌비밀번호=" + pw + account +
                 " ";
     }
 }
