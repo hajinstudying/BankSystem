@@ -1,5 +1,7 @@
 package com.javalab.domain;
 
+import java.util.Date;
+
 public class Transaction {
     // 거래일시 , 거래 계좌 , 거래 유형 , 거래 금액
     private Date date;
