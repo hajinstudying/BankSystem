@@ -1,18 +1,72 @@
 package com.javalab.Database;
 
+import com.javalab.domain.Account;
+import com.javalab.domain.Bank;
 import com.javalab.domain.Customer;
+import com.javalab.domain.Transaction;
 
 import java.util.ArrayList;
 
 public class Database {
-    public static void main(String[] args) {
-        ArrayList<Customer> customers = new ArrayList<>();
-        //id/이름/주민번호/계좌/잔액/비밀번호
-        customers.add(new Customer(1,"홍길동","930712-1123654","356-0598-0236-97", 5000,1234));
-        customers.add(new Customer(2,"김길동","990265-1256845","489-1234-4567-98", 10000,4561));
-        customers.add(new Customer(3,"이길동","981565-2023045","789-4561-0123-54", 200000,7895));
-        customers.add(new Customer(4,"서길동","205156-3545098","159-1564-4568-56", 3000000,1112));
-        customers.add(new Customer(5,"윤길동","991245-2487095","123-4567-8978-87", 60000000,5954));
-        customers.add(new Customer(6,"심길동","215645-4651023","987-6541-3156-54", 120000000,7877));
+    //고객 클래스 리스트
+    ArrayList<Customer> customers = new ArrayList<>();
+    //계좌 클래스 리스트
+    ArrayList<Account> accounts = new ArrayList<>();
+    //거래내역 클래스 리스트
+    ArrayList<Transaction> transactions = new ArrayList<>();
+    //은행 클래스 리스트
+    ArrayList<Bank> banks = new ArrayList<>();
+
+    //기본 생성자
+    public Database() {
+        initializeData();   //데이터 생성작업을 별도의 메소드로 분리
+    }
+
+    //데이터 생성 메소드
+    public void initializeData() {
+        //고객 리스트 초기화
+        customers.add(new Customer(1, "홍길동"));
+        customers.add(new Customer(2, "김유진"));
+        customers.add(new Customer(3, "강감찬"));
+        //계좌 리스트 초기화
+        accounts.add(new Account("1231231231231", 1000, 1234)); //account String형으로 변경
+        accounts.add(new Account("4004004004000", 1000, 1234));
+        accounts.add(new Account("3560598023696", 1000, 1234));
+        //은행 리스트 초기화
+        //거래내역 리스트 초기화
+    }
+
+    //getter setter
+
+    public ArrayList<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(ArrayList<Customer> customers) {
+        this.customers = customers;
+    }
+
+    public ArrayList<Account> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(ArrayList<Account> accounts) {
+        this.accounts = accounts;
+    }
+
+    public ArrayList<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(ArrayList<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
+    public ArrayList<Bank> getBanks() {
+        return banks;
+    }
+
+    public void setBanks(ArrayList<Bank> banks) {
+        this.banks = banks;
     }
 }
