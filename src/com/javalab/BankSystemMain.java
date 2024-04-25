@@ -40,6 +40,8 @@ public class BankSystemMain  {
                     System.out.println(" 번호를 입력해주세요");
                     System.out.println("1. 입금  2. 출금");
                     int transType = scanner.nextInt();
+
+                    //계좌번호 검증
                     System.out.println("계좌번호를 입력해주세요");
                     int accountNum = scanner.nextInt();
                     Account inAccount = null;
@@ -50,9 +52,31 @@ public class BankSystemMain  {
                         }
                     }
                     if(inAccount == null){
-                        System.out.println("잘못입력하셨습니다.");
+                        System.out.println("계좌번호를 잘못입력하셨습니다.");
                         break;
                     }
+
+                    //비밀번호 검증
+                    boolean validPw = false;    //플래그 변수 선언
+                    do {
+                        System.out.println("비밀번호를 입력해주세요:");
+                        int inputPassword = scanner.nextInt();
+                        for (Customer customer : db.customers) {
+                            if (inAccount.getAccountNum() == customer.getAccount().getAccountNum()) {
+                                break;
+                            }
+                            if (inputPassword == customer.getPw()) {
+                                System.out.println("비밀번호 검증 성공");
+                                validPw = true;
+                                break;
+                            }
+                        }
+                        if(!validPw){
+                            System.out.println("비밀번호를 잘못 입력하셨습니다.");
+                        }
+                    } while (!validPw);
+
+                    //transType에 따라 거래
                     System.out.println("거래 금액을 입력하십시요");
                     int amount = scanner.nextInt();
                     if(transType == 1){
