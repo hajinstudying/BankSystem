@@ -1,7 +1,6 @@
 package com.javalab;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class BankDatabase {
     // 데이터베이스 객체
@@ -14,9 +13,6 @@ public class BankDatabase {
         }
         return db;
     }
-
-
-
 
     //고객 클래스 리스트
     ArrayList<com.javalab.Customer> customers = new ArrayList<>();
@@ -38,7 +34,6 @@ public class BankDatabase {
     }
 
 
-
     public BankDatabase() {
         //계좌 클래스 예시
         Account account1 = new Account(30329040,5600);
@@ -51,11 +46,6 @@ public class BankDatabase {
         accounts.add(account4);
 
 
-
-
-
-
-
         // 고객 데이터 예시.
         Customer customer1 = new Customer(1001,"홍길동",8054,account3);
         Customer customer2 = new Customer(1002,"김철수",2580,account1);
@@ -65,9 +55,6 @@ public class BankDatabase {
         customers.add(customer2);
         customers.add(customer3);
         customers.add(customer4);
-
-
-
 
         // 거래 내역 예시.
         Transaction trans1 = new Transaction("2024년-03월-21일 11시39분25초",account1,"save",5000);
@@ -81,17 +68,11 @@ public class BankDatabase {
         transactions.add(trans4);
         transactions.add(trans5);
 
-
-
-
-
-
-
-
     }
 
+    // 거래 내역을 리스트에 추가하는 메소드
     public void addTransaction(Transaction transaction) {
-        transactions.add(transaction); // 거래 내역을 리스트에 추가
+        transactions.add(transaction);
     }
 
 

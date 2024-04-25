@@ -1,7 +1,7 @@
 package com.javalab;
 
 public class Customer {
-    private int Id;         //회원ID
+    private int id;         //회원ID
     private String name;    //이름
     private int pw;         //계좌비밀번호
     private Account accountNum; // 계좌번호
@@ -12,8 +12,9 @@ public class Customer {
 
     // 오버로딩 생성자
 
+
     public Customer(int id, String name, int pw, Account accountNum) {
-        Id = id;
+        this.id = id;
         this.name = name;
         this.pw = pw;
         this.accountNum = accountNum;
@@ -29,11 +30,11 @@ public class Customer {
     }
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {
@@ -56,7 +57,7 @@ public class Customer {
     @Override
     public String toString() {
         return "Customer{" +
-                "고객ID=" + Id +
+                "고객ID=" + id +
                 ", 이름='" + name + '\'' +
                 ", 계좌비밀번호=" + pw +accountNum+
                 " ";

@@ -2,7 +2,6 @@ package com.javalab;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 
 public class Account {
     private int accountNum;  //계좌번호
@@ -38,15 +37,15 @@ public class Account {
     }
 
     // 입금 메소드
-    public synchronized void  saveMoney(double savemoney){
+    public synchronized void  saveMoney(double saveMoney){
         double currentMoney = getAcBalance();
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        setAcBalance(currentMoney+savemoney);
-        addTransaction("savemoney",savemoney);
+        setAcBalance(currentMoney+saveMoney);
+        addTransaction("saveMoney",saveMoney);
         System.out.println("입금완료");
         System.out.println("현재 잔액은 : " + getAcBalance() + "입니다");
 
@@ -55,16 +54,16 @@ public class Account {
 
 
     // 출금 메소드
-    public synchronized void withdraw(double withdrawmoney){
+    public synchronized void withdraw(double withdrawMoney){
         double currentMoney = getAcBalance();
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        if(currentMoney-withdrawmoney>=0){
-            setAcBalance(currentMoney-withdrawmoney);
-            addTransaction("withdraw",withdrawmoney);
+        if(currentMoney-withdrawMoney>=0){
+            setAcBalance(currentMoney-withdrawMoney);
+            addTransaction("withdraw",withdrawMoney);
             System.out.println("출금 완료");
             System.out.println("현재 잔액은 : "+ getAcBalance() + "입니다");
         } else {
