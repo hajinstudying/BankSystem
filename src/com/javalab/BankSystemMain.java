@@ -76,7 +76,6 @@ public class BankSystemMain  {
                         }
                     } while (!validPw);
 
-                    //transType에 따라 거래
                     System.out.println("거래 금액을 입력하십시요");
                     int amount = scanner.nextInt();
                     if(transType == 1){
