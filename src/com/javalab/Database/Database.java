@@ -18,17 +18,21 @@ public class Database {
     ArrayList<Bank> banks = new ArrayList<>();
 
     //기본 생성자
-    public Database(){
+    public Database() {
         initializeData();   //데이터 생성작업을 별도의 메소드로 분리
     }
 
     //데이터 생성 메소드
-    public void initializeData(){
+    public void initializeData() {
         //고객 리스트 초기화
-
+        customers.add(new Customer(1, "홍길동", 6425));
+        customers.add(new Customer(2, "김유진", 2856));
+        customers.add(new Customer(3, "강감찬", 1687));
         //계좌 리스트 초기화
+        accounts.add(new Account(1231231231231, 1000)); //account String으로 해야할듯?
+        accounts.add(new Account(4004004004000, 1000));
+        accounts.add(new Account(3560598023696, 1000));
         //거래내역 리스트 초기화
         //은행 리스트 초기화
     }
-
 }

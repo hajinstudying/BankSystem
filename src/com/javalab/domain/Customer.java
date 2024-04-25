@@ -10,7 +10,7 @@ public class Customer {
     public Customer() {
     }
     //오버로딩 생성자
-    public Customer(int id, String name, Account acount, int pw) {
+    public Customer(int id, String name, int pw) {
         Id = id;
         this.name = name;
         this.pw = pw;
