@@ -1,4 +1,4 @@
-package com.javalab.sec02;
+package com.javalab;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

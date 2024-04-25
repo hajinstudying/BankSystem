@@ -1,4 +1,4 @@
-package com.javalab.sec02;
+package com.javalab;
 
 public class Customer {
     private int Id;         //회원ID

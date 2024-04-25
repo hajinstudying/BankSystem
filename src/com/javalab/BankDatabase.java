@@ -1,4 +1,4 @@
-package com.javalab.sec02;
+package com.javalab;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class BankDatabase {
 
 
     //고객 클래스 리스트
-    ArrayList<Customer> customers = new ArrayList<>();
+    ArrayList<com.javalab.Customer> customers = new ArrayList<>();
     //계좌 클래스 리스트
     ArrayList<Account> accounts = new ArrayList<>();
     //거래내역 클래스 리스트

@@ -1,4 +1,4 @@
-package com.javalab.sec02;
+package com.javalab;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -78,8 +78,8 @@ public class Account {
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년-MM월-dd일 HH시mm분ss초");
         String formattedDateTime = date.format(formatter);
-        Transaction transaction = new Transaction(formattedDateTime, this, type, amount);
-        BankDatabase.getInstance().addTransaction(transaction);
+        com.javalab.Transaction transaction = new com.javalab.Transaction(formattedDateTime, this, type, amount);
+        com.javalab.BankDatabase.getInstance().addTransaction(transaction);
     }
 
     @Override

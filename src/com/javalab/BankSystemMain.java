@@ -1,4 +1,4 @@
-package com.javalab.sec02;
+package com.javalab;
 
 import java.util.Scanner;
 
@@ -39,26 +39,26 @@ public class BankSystemMain  {
                 case 4 :
                     System.out.println(" 번호를 입력해주세요");
                     System.out.println("1. 입금  2. 출금");
-                    int transtype = scanner.nextInt();
+                    int transType = scanner.nextInt();
                     System.out.println("계좌번호를 입력해주세요");
                     int accountNum = scanner.nextInt();
-                    Account inaccount = null;
+                    Account inAccount = null;
                     for(Account account : db.accounts) {
                         if (accountNum == account.getAccountNum()) {
-                            inaccount = account;
+                            inAccount = account;
                             break;
                         }
                     }
-                    if(inaccount == null){
+                    if(inAccount == null){
                         System.out.println("잘못입력하셨습니다.");
                         break;
                     }
                     System.out.println("거래 금액을 입력하십시요");
                     int amount = scanner.nextInt();
-                    if(transtype == 1){
-                        inaccount.saveMoney(amount);
-                    } else if(transtype ==2){
-                        inaccount.withdraw(amount);
+                    if(transType == 1){
+                        inAccount.saveMoney(amount);
+                    } else if(transType ==2){
+                        inAccount.withdraw(amount);
                     } else {
                         System.out.println("잘못된 입력입니다");
                     }
