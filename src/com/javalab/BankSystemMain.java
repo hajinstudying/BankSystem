@@ -72,8 +72,7 @@ public class BankSystemMain  {
                             System.out.println("비밀번호 검증 성공");
                             validPw = true;
                             break;
-                        }
-                        if (!validPw) {
+                        }else{
                             System.out.println("비밀번호를 잘못 입력하셨습니다.");
                         }
                     } while (!validPw);
