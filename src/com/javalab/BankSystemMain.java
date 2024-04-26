@@ -56,27 +56,24 @@ public class BankSystemMain  {
                         break;
                     }
 
-                    //비밀번호 검증
+                     //비밀번호 검증
                     boolean validPw = false;    //플래그 변수 선언
-                    Customer inCustomer = null;
                     do {
                         System.out.println("비밀번호를 입력해주세요:");
                         int inputPassword = scanner.nextInt();
                         for (Customer customer : db.customers) {
                             if (inAccount.getAccountNum() == customer.getAccount().getAccountNum()) {
-                                inCustomer = customer;
+                                if (inputPassword == customer.getPw()) {
+                                System.out.println("비밀번호 검증 성공");
+                                validPw = true;
                                 break;
+                                }
                             }
                         }
-                        if (inCustomer != null && inputPassword == inCustomer.getPw()) {
-                            System.out.println("비밀번호 검증 성공");
-                            validPw = true;
-                            break;
-                        }else{
+                        if(!validPw){
                             System.out.println("비밀번호를 잘못 입력하셨습니다.");
                         }
                     } while (!validPw);
-
                     System.out.println("거래 금액을 입력하십시요");
                     int amount = scanner.nextInt();
                     if(transType == 1){
