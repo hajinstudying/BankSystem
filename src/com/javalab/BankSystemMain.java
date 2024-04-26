@@ -68,7 +68,7 @@ public class BankSystemMain  {
                                 break;
                             }
                         }
-                        if (inputPassword == inCustomer.getPw()) {
+                        if (inCustomer != null && inputPassword == inCustomer.getPw()) {
                             System.out.println("비밀번호 검증 성공");
                             validPw = true;
                             break;
