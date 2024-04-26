@@ -61,17 +61,19 @@ public class BankSystemMain  {
                     do {
                         System.out.println("비밀번호를 입력해주세요:");
                         int inputPassword = scanner.nextInt();
+                        Customer inCustomer = null;
                         for (Customer customer : db.customers) {
                             if (inAccount.getAccountNum() == customer.getAccount().getAccountNum()) {
-                                break;
-                            }
-                            if (inputPassword == customer.getPw()) {
-                                System.out.println("비밀번호 검증 성공");
-                                validPw = true;
+                                inCustomer = customer;
                                 break;
                             }
                         }
-                        if(!validPw){
+                        if (inputPassword == inCustomer.getPw()) {
+                            System.out.println("비밀번호 검증 성공");
+                            validPw = true;
+                            break;
+                        }
+                        if (!validPw) {
                             System.out.println("비밀번호를 잘못 입력하셨습니다.");
                         }
                     } while (!validPw);
