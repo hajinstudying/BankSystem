@@ -11,8 +11,6 @@ public class Customer {
     }
 
     // 오버로딩 생성자
-
-
     public Customer(int id, String name, int pw, Account account) {
         this.id = id;
         this.name = name;

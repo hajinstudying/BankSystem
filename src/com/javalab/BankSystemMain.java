@@ -58,10 +58,10 @@ public class BankSystemMain  {
 
                     //비밀번호 검증
                     boolean validPw = false;    //플래그 변수 선언
+                    Customer inCustomer = null;
                     do {
                         System.out.println("비밀번호를 입력해주세요:");
                         int inputPassword = scanner.nextInt();
-                        Customer inCustomer = null;
                         for (Customer customer : db.customers) {
                             if (inAccount.getAccountNum() == customer.getAccount().getAccountNum()) {
                                 inCustomer = customer;
